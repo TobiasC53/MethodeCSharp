@@ -19,12 +19,18 @@ namespace Methode_Aufgabe_1
             anzahl = ausgabeTextMalX(text, x);
 
             Console.Write("\nAnzahl der Buchstaben: {0}", anzahl);
+
+
+
+
+
         }
 
         static int ausgabeTextMalX(string text, int x)
         {
 
             int textgroesse = text.Length;
+
             int y = textgroesse * x;
             return y;
         }
