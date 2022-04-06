@@ -7,7 +7,7 @@ namespace Methode_implementieren_und_aufrufen
         static void Main(string[] args)
         {
 
-            bool flag = false;
+            bool flag = false;  
             string eingabe_string;
             short eingabe_short;
 
@@ -22,8 +22,10 @@ namespace Methode_implementieren_und_aufrufen
             Console.WriteLine("Bitte geben sie ihr Nachname ein:");
             eingabe_string = Console.ReadLine();
 
-            flag = short.TryParse(eingabe_string out eingabe_short);
+            Console.WriteLine("Bitte geben sie ihre Zimmernummer ein:");
+            eingabe_short = Convert.ToInt16(Console.ReadLine());
 
+            flag = short.TryParse(eingabe_string, out eingabe_short);
 
 
 
