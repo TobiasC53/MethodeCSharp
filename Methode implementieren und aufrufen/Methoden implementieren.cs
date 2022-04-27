@@ -6,6 +6,7 @@ namespace Methode_implementieren_und_aufrufen
     {
         static void Main(string[] args)
         {
+            //Tobias Cremer und Sergey Zavadovskiy zusammen bearbeitet
 
             bool flag = false;  
             string eingabe_string;
@@ -29,11 +30,11 @@ namespace Methode_implementieren_und_aufrufen
 
                 if(flag==false)
                 {
-                    GetData(eingabe_short, zimmernummer, vorname, nachname, übernachtung, rechnungsbetrag);
+                   var data = GetData(eingabe_short, zimmernummer, vorname, nachname, übernachtung, rechnungsbetrag);
                 }
                 else
                 {
-                    GetData(eingabe_string, zimmernummer, vorname, nachname, übernachtung, rechnungsbetrag);
+                    var data = GetData(eingabe_string, zimmernummer, vorname, nachname, übernachtung, rechnungsbetrag);
                 }
 
 
@@ -51,21 +52,42 @@ namespace Methode_implementieren_und_aufrufen
         static (bool, short, string, string, short, double) GetData(short diff, short[] zimmernummer, string [] vorname, string[] nachname, short[] übernachtung, double[] rechnungsbetrag)
         {
 
+            bool EI = false;
+            int index = 0;
 
 
+            for (int i = 0; i < zimmernummer.Length; i++)
+            {
+                if (diff==zimmernummer[i])
+                {
+                    index = i;
+                    EI = true;
+             
+                }
+            }
 
+            return (EI, zimmernummer[index], vorname[index], nachname[index], übernachtung[index], rechnungsbetrag[index]);
 
-            return (true, 0, "", "", 0, 0.0);
         }
 
         static (bool, short, string, string, short, double) GetData(string diff, short[] zimmernummer, string[] vorname, string[] nachname, short[] übernachtung, double[] rechnungsbetrag)
         {
+            bool EI = false;
+            int index = 0;
+
+            for (int i = 0; i < nachname.Length; i++)
+            {
+                if (diff == nachname[i])
+                {
+                    index = i;
+                    EI = true;
+                }
+            }
 
 
 
 
-
-            return (true, 0, "", "", 0, 0.0);
+            return (EI, zimmernummer[index], vorname[index], nachname[index], übernachtung[index], rechnungsbetrag[index]);
         }
     }
 }
